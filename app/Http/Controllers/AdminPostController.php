@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Category;
 use App\Photo;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -31,9 +32,9 @@ class AdminPostController extends Controller
     {
         $user = User::all();
         $photo = Photo::all();
-        // $category = Category::all();
+        $category = Category::lists('name','id')->all();
 
-        return view('admin.posts.create', compact('user', 'photo'));
+        return view('admin.posts.create', compact('user', 'photo', 'category'));
     }
 
     /**

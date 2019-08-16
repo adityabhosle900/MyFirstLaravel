@@ -5,6 +5,7 @@ use App\User;
 use App\Post;
 use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Auth;
+use App\Category;
 
 
 Route::get('/', function () {
